@@ -3,3 +3,17 @@
   transition: 0.3s;
 }
 
+
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btnEliminar {
+  margin-top: 10px;
+} 

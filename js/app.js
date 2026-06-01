@@ -39,3 +39,11 @@ document.getElementById("btnFiltrar").addEventListener("click", () => {
   renderizar(filtrados);
 });
 
+// Eliminar personaje
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("btnEliminar")) {
+    const id = parseInt(e.target.dataset.id);
+    lista = lista.filter(p => p.id !== id);
+    renderizar(lista);
+  }
+});

@@ -24,10 +24,21 @@
     <input type="text" id="filtroNombre" class="form-control" placeholder="Filtrar por nombre">
     <button id="btnFiltrar" class="btn btn-primary mt-2">Filtrar</button>
   </div>
-
+  
   <!-- Contenedor de cards -->
   <div id="galeria" class="row"></div>
-  
+  const card = `
+  <div class="col-md-4 mb-3">
+    <div class="card h-100">
+      <img src="${imagen}" class="card-img-top" alt="${nombre}">
+      <div class="card-body text-center">
+        <h5 class="card-title">${nombre}</h5>
+        <button class="btn btn-danger btnEliminar" data-id="${id}">Eliminar</button>
+      </div>
+    </div>
+  </div>
+`;
+
   <script src="js/app.js"></script>
 </body>
 </html>
