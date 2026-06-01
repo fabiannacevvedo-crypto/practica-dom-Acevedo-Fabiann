@@ -7,3 +7,34 @@ const personajes = [
 ];
 
 let lista = [...personajes];
+
+//RENDERIZADO
+
+  function renderizar(listaPersonajes) {
+  const galeria = document.getElementById("galeria");
+  galeria.innerHTML = "";
+
+  listaPersonajes.forEach(({ id, nombre, imagen }) => {
+    const card = `
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <img src="${imagen}" class="card-img-top" alt="${nombre}">
+          <div class="card-body text-center">
+            <h5 class="card-title">${nombre}</h5>
+          </div>
+        </div>
+      </div>
+    `;
+    galeria.innerHTML += card;
+  });
+}
+
+// Render inicial
+renderizar(lista);
+
+
+
+
+// git add .
+// git commit -m "Implementar renderizado dinámico de cards"
+// git push origin feature/catalogo
