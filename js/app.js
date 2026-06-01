@@ -38,3 +38,26 @@ document.getElementById("btnFiltrar").addEventListener("click", () => {
   const filtrados = lista.filter(p => p.nombre.toLowerCase().includes(filtro));
   renderizar(filtrados);
 });
+
+// Agregar personaje
+document.getElementById("btnAgregar").addEventListener("click", () => {
+  const nombre = document.getElementById("nombreNuevo").value.trim();
+  const imagen = document.getElementById("imagenNueva").value.trim();
+
+  if (!nombre || !imagen) {
+    alert("Completa ambos campos antes de agregar.");
+    return;
+  }
+
+  const nuevoPersonaje = {
+    id: lista.length + 1,
+    nombre,
+    imagen
+  };
+
+  lista.push(nuevoPersonaje);
+  renderizar(lista);
+
+  document.getElementById("nombreNuevo").value = "";
+  document.getElementById("imagenNueva").value = "";
+});
