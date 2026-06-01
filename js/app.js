@@ -1,3 +1,4 @@
+// 🔹 Arreglo inicial
 const personajes = [
   { id: 1, nombre: "A-Bomb", imagen: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/1-a-bomb.jpg" },
   { id: 2, nombre: "Abe Sapien", imagen: "https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/images/md/2-abe-sapien.jpg" },
@@ -8,9 +9,8 @@ const personajes = [
 
 let lista = [...personajes];
 
-//RENDERIZADO
-
-  function renderizar(listaPersonajes) {
+//  Renderizado dinámico
+function renderizar(listaPersonajes) {
   const galeria = document.getElementById("galeria");
   galeria.innerHTML = "";
 
@@ -32,9 +32,9 @@ let lista = [...personajes];
 // Render inicial
 renderizar(lista);
 
-
-
-
-// git add .
-// git commit -m "Implementar renderizado dinámico de cards"
-// git push origin feature/catalogo
+//  Filtro por nombre
+document.getElementById("btnFiltrar").addEventListener("click", () => {
+  const filtro = document.getElementById("filtroNombre").value.toLowerCase();
+  const filtrados = lista.filter(p => p.nombre.toLowerCase().includes(filtro));
+  renderizar(filtrados);
+});
